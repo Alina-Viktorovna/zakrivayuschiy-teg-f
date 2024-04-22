@@ -1,1 +1,13 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --fonts: 'Ihter-Variable';
+    --accent-fonts: 'PressStart2P';
+    --weight-text: 400;
+    --weight-title: 700;
+    --bg-color: rgba(231, 231, 231, 1);
+    --accent-color: rgba(0, 0, 0, 1);
+    --bg-image:
+        repeating-linear-gradient( 270deg, #d3d3d3, transparent 2px),
+        repeating-linear-gradient(#e7e7e7 0.01%, #1a1a1a 2px);
+
+}

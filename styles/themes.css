@@ -4,3 +4,41 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+:root.theme-light {
+    --fonts: 'Ihter-Variable';
+    --accent-fonts: 'PressStart2P';
+    --weight-text: 400;
+    --weight-title: 700;
+    --bg-color: rgba(231, 231, 231, 1);
+    --accent-color: rgba(0, 0, 0, 1);
+    --bg-image:
+    repeating-linear-gradient( 270deg, #d3d3d3, transparent 2px),
+    repeating-linear-gradient(#e7e7e7 0.01%, #1a1a1a 2px);
+
+}
+
+:root.theme-dark {
+    --fonts: 'Ihter-Variable';
+    --accent-fonts: 'PressStart2P';
+    --weight-text: 465;
+    --weight-title: 785;
+    --bg-color: rgba(0, 0, 0, 1);
+    --accent-color: rgba(0, 204, 20, 1);
+    --bg-image:
+    repeating-linear-gradient( 270deg, #000, transparent 2px),
+    repeating-linear-gradient(#007f0c, #004306 2px);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    --fonts: 'Ihter-Variable';
+    --accent-fonts: 'PressStart2P';
+    --weight-text: 465;
+    --weight-title: 785;
+    --bg-color: rgba(0, 0, 0, 1);
+    --accent-color: rgba(0, 204, 20, 1);
+    --bg-image:
+    repeating-linear-gradient( 270deg, #000, transparent 2px),
+    repeating-linear-gradient(#007f0c, #004306 2px);
+    }
+}
