@@ -5,40 +5,64 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 :root.theme-light {
-    --fonts: 'Ihter-Variable';
+    --fonts: 'Ihter-Variable', sans-serif;
     --accent-fonts: 'PressStart2P';
     --weight-text: 400;
     --weight-title: 700;
     --bg-color: rgba(231, 231, 231, 1);
     --accent-color: rgba(0, 0, 0, 1);
+    --border: rgba(0, 0, 0, 1);
+    --text-stroke:rgba(255, 255, 255, 1);
+    --label:rgba(0, 0, 0, 1);
+    --box-shadow: 2px 2px rgb(0, 0, 0);
+    --text-button: rgb(231, 231, 231);
+    --heart-contur: rgba(0, 0, 0, 1);
+    --sparks:rgba(255, 0, 0, 1);
     --bg-image:
-    repeating-linear-gradient( 270deg, #d3d3d3, transparent 2px),
-    repeating-linear-gradient(#e7e7e7 0.01%, #1a1a1a 2px);
+    repeating-linear-gradient( 90deg, #d3d3d3 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(180deg, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
 
 }
 
 :root.theme-dark {
-    --fonts: 'Ihter-Variable';
+    --fonts: 'Ihter-Variable', sans-serif;
     --accent-fonts: 'PressStart2P';
     --weight-text: 465;
     --weight-title: 785;
     --bg-color: rgba(0, 0, 0, 1);
     --accent-color: rgba(0, 204, 20, 1);
+    --border:rgba(0, 204, 20, 1);
+    --text-stroke:rgba(0, 0, 0, 1);
+    --label:rgba(0, 204, 20, 1);
+    --box-shadow: 2px 2px rgb(0, 204, 20);
+    --text-button: rgba(0, 0, 0, 1);
+    --heart-contur: rgba(0, 204, 20, 1);
+    --sparks:rgba(255, 0, 0, 1);
     --bg-image:
-    repeating-linear-gradient( 270deg, #000, transparent 2px),
-    repeating-linear-gradient(#007f0c, #004306 2px);
+        repeating-linear-gradient( 90deg, #000 0px 2px, transparent 2px 4px),
+        repeating-linear-gradient(180deg, #000 0px 2px, transparent 2px 4px),
+        linear-gradient(180deg, #007f0c 0%, #004306 100%);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-    --fonts: 'Ihter-Variable';
+    --fonts: 'Ihter-Variable', sans-serif;
     --accent-fonts: 'PressStart2P';
     --weight-text: 465;
     --weight-title: 785;
     --bg-color: rgba(0, 0, 0, 1);
     --accent-color: rgba(0, 204, 20, 1);
+    --border:rgba(0, 204, 20, 1);
+    --text-stroke:rgba(0, 0, 0, 1);
+    --label:rgba(0, 204, 20, 1);
+    --box-shadow: 2px 2px rgb(0, 204, 20);
+    --text-button: rgba(0, 0, 0, 1);
+    --heart-contur: rgba(0, 204, 20, 1);
+    --sparks:rgba(255, 0, 0, 1);
     --bg-image:
-    repeating-linear-gradient( 270deg, #000, transparent 2px),
-    repeating-linear-gradient(#007f0c, #004306 2px);
+        repeating-linear-gradient( 90deg, #000 0px 2px, transparent 2px 4px),
+        repeating-linear-gradient(180deg, #000 0px 2px, transparent 2px 4px),
+        linear-gradient(180deg, #007f0c 0%, #004306 100%);
     }
 }
