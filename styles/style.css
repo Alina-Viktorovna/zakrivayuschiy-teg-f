@@ -110,7 +110,6 @@
 
 .theme-menu__button:disabled::before {
   content: "▶";
-  display: inline-block;
   position: absolute;
   transition: width 0.3s ease;
   top: 0;
