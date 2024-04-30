@@ -1,9 +1,9 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     --fonts: 'Ihter-Variable', sans-serif;
-    --accent-fonts: 'PressStart2P';
-    --weight-text: 400;
-    --weight-title: 700;
+    --accent-fonts: 'PressStart2P', fantasy;
+    --weight-text: "wght" 400 "wdth" 0 "opsz" 0;
+    --weight-title: "wght" 700 "wdth" 0 "opsz" 0;
     --bg-color: rgba(231, 231, 231, 1);
     --accent-color: rgba(0, 0, 0, 1);
     --border: rgba(0, 0, 0, 1);
@@ -12,12 +12,9 @@
     --box-shadow: 2px 2px rgb(0, 0, 0);
     --text-button: rgb(231, 231, 231);
     --heart-contur: rgba(0, 0, 0, 1);
-    --heart-sparks:rgba(255, 0, 0, 1);
-    --heart-core:rgba(255, 0, 0, 1);
-    --heart-main-body:rgba(0, 0, 0, 1);
+    --sparks:rgba(255, 0, 0, 1);
     --bg-image:
-    repeating-linear-gradient( 90deg, #272727 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient( 90deg, #d3d3d3 0px 2px, transparent 2px 4px),
     repeating-linear-gradient(180deg, #d3d3d3 0px 2px, transparent 2px 4px),
     linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
-
 }

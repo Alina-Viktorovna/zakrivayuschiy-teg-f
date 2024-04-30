@@ -17,7 +17,7 @@
 .page {
   min-inline-size: 375px;
   min-block-size: 100dvb;
-  font-family: var(--fonts), sans-serif;
+  font-family: var(--fonts);
   font-variation-settings: "wght" var(--weight-text);
   background-color: var(--bg-color);
   color: var(--accent-color);
@@ -39,7 +39,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 33px;
+  background-color: var(--bg-color);
+  background-size: cover;
+  inline-size: 100%;
 }
 
 .header__label {
@@ -50,9 +53,10 @@
   text-decoration: none;
   line-height: 49px;
   text-align: center;
-  margin-top: clamp(7.625rem, 7.2729rem + 1.5023vw, 8.625rem);
+  margin-block-start: 142px;
   margin-left: auto;
   margin-right: auto;
+  text-transform: uppercase;
 }
 
 .header__text {
@@ -85,8 +89,9 @@
 }
 
 .theme-menu {
-  margin-top: clamp(1.25rem, 1.25rem + 0vw, 1.25rem);
-  margin-bottom: clamp(1.25rem, 1.25rem + 0vw, 1.25rem);
+  margin-inline-start: 15px;
+  margin-block-start: -12px;
+  padding-block-end: 19px;
 }
 
 .theme-menu__button:hover {
@@ -103,19 +108,20 @@
   opacity: 0.6;
 }
 
-.theme-menu__button:before {
+.theme-menu__button:disabled::before {
   content: "▶";
   display: inline-block;
-  line-height: 14px;
-  font-family: var(--accent-fonts);
+  position: absolute;
   transition: width 0.3s ease;
+  top: 0;
+  left: -50px;
 }
 
-.theme-menu__button:not(:focus-visible::before) {
+.theme-menu__button:not(:focus-visible::after) {
   transform: none;
 }
 
-.theme-menu__button:focus-visible::before {
+.theme-menu__button:focus-visible::after {
   transform: scale(1);
 }
 
@@ -130,20 +136,33 @@
 .content {
   width: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
   border: 2px solid var(--border);
-  padding-block-end: 20px;
+  padding-block-end: 27px;
 }
 
 .content__title {
-  font-family: var(--fonts);
   font-weight: var(--weight-title);
+  max-width: 100%;
   font-size: 18px;
   line-height: 21.78px;
   padding: 6px 10px;
 }
 
-.line-break::before {
-  content: "\A";
-  display: block;
+@media (width <= 375px) {
+  .content__title {
+    max-width: 362px;
+  }
+
+  .header__label {
+    margin-block-start: 122px;
+  }
+
+  .theme-menu {
+    padding-block-end: 19px;
+  }
+  
+  .header__text {
+    margin-block-start: -13px;
+  }
 }
 
 .content__image {
@@ -153,8 +172,6 @@
 }
 
 .content__text {
-  font-family: var(--fonts);
-  font-weight: var(--weight-text);
   font-size: 18px;
   line-height: 21px;
   padding: 23px 25px 0;
@@ -192,10 +209,9 @@
   position: relative;
 }
 
-.stroke  {
+.stroke {
   position: absolute;
   z-index: 1;
-  -webkit-text-stroke: 1px var(--text-stroke);
   inset-inline-end: 12px;
   inset-block-start: 20px;
 }
@@ -208,10 +224,9 @@
   background-blend-mode:hard-light;
 }
 
-@supports((card-lable: 1px var(--label)) or (-webkit-card-lable: 1px var(--label))) {
+@supports((text-stroke: 1px var(--box-shadow)) or (-webkit-text-stroke: 1px var(--box-shadow))) {
   p {
-      -webkit-card-lable: 1px var(--label);
-      text-stroke: 1px var(--label);
+      -webkit-text-stroke: 1px var(--box-shadowl);
       text-shadow: none;
   }
 }
@@ -219,7 +234,7 @@
 .content__list {
   display: flex;
   justify-content: flex-end;
-  gap: 7px;
+  gap: 6px;
   padding-block-start: 26px;
 }
 
@@ -232,18 +247,24 @@
 }
 
 .card__like-button {
-  background-color: transparent;
+  cursor: pointer;
   margin-right: 25px;
   padding: 10px 35px 7px;
-  border: 2px solid var(--border);
-  transition: box-shadow 0.3s ease;
-  max-block-size: 38px;
+  min-height: 38px;
   min-inline-size: 130px;
   max-inline-size: 130px;
 }
 
+.card__like-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--border);
+}
+
 .button__text {
-  font-family: var(---accent-fonts);
+  font-family: var(--accent-fonts);
   font-weight: var(--weight-text);
   font-size: 14px;
   line-height: 12.6px;
@@ -252,25 +273,33 @@
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   border: 2px solid var(--border);
   position: relative;
-  transition: 0.5s ease-in-out;
+  transition:  0.5s ease-in-out;
   background-color: transparent;
 }
 
-.card__like-button:focus {
+.button:focus {
   outline: none;
   box-shadow: var(--box-shadow);
 }
 
-.card__like-button:hover {
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--border);
+}
+
+.button:hover {
   cursor: pointer;
 }
 
-.card__like-button:after{
+.button:after{
   content: "";
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   left: 0;
   top: 0;
   inline-size: 100%;
@@ -281,15 +310,16 @@
   transform-origin: left;
 }
 
-.card__like-button:hover::after {
+.button:hover::after {
   transform: scale(1);
 }
 
 .button__text:hover{
   z-index: 1;
+  position: absolute;
   color: var(--accent-color);
-  background-blend-mode: difference;
   transform: scale(1);
+  mix-blend-mode: difference;
 }
 
 .sparks {
@@ -316,9 +346,10 @@
   display: flex;
   justify-content: center;
   margin-block-start: 40px;
+  margin-block-end: 40px;
 }
 
-.footer__button {
+.footer-button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -335,13 +366,6 @@
   z-index: 2;
   mix-blend-mode: difference;
   color: var(--accent-color);
-}
-.footer__button:focus {
-  outline: none;
-}
-
-.footer__button:focus-visible {
-  box-shadow: 2px 2px 0 var(--border);
 }
 
 .footer__button-icon {
@@ -372,7 +396,6 @@ dialog[open] {
 
 .modal__title {
   font-family: var(--accent-fonts);
-  font-weight: var(--weight-text);
   font-size: 14px;
   line-height: 21px;
   max-width: 198px;
@@ -382,7 +405,6 @@ dialog[open] {
 
 .modal__text {
   text-transform: uppercase;
-  position: absolute;
   color: var(--accent-color);
 }
 
@@ -394,12 +416,10 @@ dialog[open] {
   color: var(--accent-color);
 }
 
-.dialog-button:focus {
-  outline: none;
+.dialog-button {
+  padding-block-start: 9px;
+  padding-block-end: 9px;
 }
 
-.dialog-button:focus-visible {
-  box-shadow: 2px 2px 0 var(--border);
-}
 
 
