@@ -18,7 +18,7 @@
   min-inline-size: 375px;
   min-block-size: 100dvb;
   font-family: var(--fonts);
-  font-variation-settings: "wght" var(--weight-text);
+  font-variation-settings: var(--weight-text);
   background-color: var(--bg-color);
   color: var(--accent-color);
   background-image: var(--bg-image);
@@ -108,16 +108,19 @@
   opacity: 0.6;
 }
 
-.theme-menu__button:disabled::before {
-  content: "▶";
-  position: absolute;
+.theme-menu__button:hover::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: var(--accent-color);
   transition: width 0.3s ease;
   top: 0;
-  left: -50px;
+  left: 0;
+  width: 100%;
 }
 
 .theme-menu__button:not(:focus-visible::after) {
-  transform: none;
+  transform: 0;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -133,20 +136,21 @@
 }
 
 .content {
+  background-color: var(--bg-color);
   width: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
   border: 2px solid var(--border);
   padding-block-end: 27px;
 }
 
 .content__title {
-  font-weight: var(--weight-title);
+  font-variation-settings: var(--weight-title);
   max-width: 100%;
   font-size: 18px;
   line-height: 21.78px;
   padding: 6px 10px;
 }
 
-@media (width <= 375px) {
+@media (width >= 375px) {
   .content__title {
     max-width: 362px;
   }
@@ -224,8 +228,8 @@
 }
 
 @supports((text-stroke: 1px var(--box-shadow)) or (-webkit-text-stroke: 1px var(--box-shadow))) {
-  p {
-      -webkit-text-stroke: 1px var(--box-shadowl);
+  .stroke {
+      -webkit-text-stroke: 1px var(--box-shadow);
       text-shadow: none;
   }
 }
@@ -263,11 +267,12 @@
 }
 
 .button__text {
+  mix-blend-mode: difference;
   font-family: var(--accent-fonts);
   font-weight: var(--weight-text);
   font-size: 14px;
   line-height: 12.6px;
-  position: relative;
+  position: absolute;
   z-index: 1;
 }
 
@@ -278,7 +283,7 @@
   cursor: pointer;
   border: 2px solid var(--border);
   position: relative;
-  transition:  0.5s ease-in-out;
+  transition:  0.3s ease;
   background-color: transparent;
 }
 
@@ -313,16 +318,15 @@
   transform: scale(1);
 }
 
-.button__text:hover{
-  z-index: 1;
+.button__text::after{
   position: absolute;
-  color: var(--accent-color);
+  z-index: 1;
   transform: scale(1);
   mix-blend-mode: difference;
 }
 
 .sparks {
-  opacity: none;
+  opacity: 0;
 }
 
 .button::before {
@@ -358,6 +362,7 @@
   min-block-size: 80px;
   margin: 0 auto;
   transition: box-shadow 0.3s ease;
+  background-color: var(--bg-color);
 }
 
 .footer__floppy {
