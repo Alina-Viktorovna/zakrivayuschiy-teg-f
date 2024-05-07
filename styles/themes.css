@@ -7,9 +7,9 @@
 :root.theme-light {
     --fonts: 'Ihter-Variable', sans-serif;
     --accent-fonts: 'PressStart2P', fantasy;
-    --weight-text: "wght" 400 "wdth" 0 "opsz" 0;
-    --weight-title: "wght" 700 "wdth" 0 "opsz" 0;
-    --bg-color: rgba(231, 231, 231, 1);
+    --weight-text: 400;
+    --weight-title: 700;
+    --bg-color: rgba(255, 255, 255, 1);
     --accent-color: rgba(0, 0, 0, 1);
     --border: rgba(0, 0, 0, 1);
     --text-shadow:rgba(255, 255, 255, 1);
@@ -27,8 +27,8 @@
 :root.theme-dark {
     --fonts: 'Ihter-Variable', sans-serif;
     --accent-fonts: 'PressStart2P', fantasy;
-    --weight-text: "wght" 400 "wdth" 0 "opsz" 0;
-    --weight-title: "wght" 700 "wdth" 0 "opsz" 0;
+    --weight-text: 465;
+    --weight-title: 785;
     --bg-color: rgba(0, 0, 0, 1);
     --accent-color: rgba(0, 204, 20, 1);
     --border:rgba(0, 204, 20, 1);
@@ -48,8 +48,8 @@
     :root {
     --fonts: 'Ihter-Variable', sans-serif;
     --accent-fonts: 'PressStart2P', fantasy;
-    --weight-text: "wght" 400 "wdth" 0 "opsz" 0;
-    --weight-title: "wght" 700 "wdth" 0 "opsz" 0;
+    --weight-text: 465;
+    --weight-title: 785;
     --bg-color: rgba(0, 0, 0, 1);
     --accent-color: rgba(0, 204, 20, 1);
     --border:rgba(0, 204, 20, 1);
