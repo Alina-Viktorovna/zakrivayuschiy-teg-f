@@ -381,7 +381,7 @@ dialog[open] {
 }
 
 .modal__icon {
-  color: var(--text-button);
+  color: var(--accent-color);
 }
 
 .dialog-button {
