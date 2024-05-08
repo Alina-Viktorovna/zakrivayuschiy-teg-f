@@ -337,7 +337,7 @@
 }
 
 .footer__floppy {
-  color: var(--text-button);
+  color: var(--accent-color);
   mix-blend-mode: difference;
 }
 
