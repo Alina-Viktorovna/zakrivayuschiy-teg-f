@@ -347,12 +347,12 @@ dialog::backdrop {
 }
 
 dialog[open] {
-  display: flex; 
-  flex-direction: column; 
-  background-color: var(--bg-color); 
-  gap: 30px; 
-  min-width: 341px; 
-  padding: 32px 42px; 
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  gap: 30px;
+  min-width: 341px;
+  padding: 32px 42px;
   border: 2px solid var(--border);
 }
 
@@ -363,13 +363,13 @@ dialog[open] {
 }
 
 .modal__title {
-  font-family: var(--accent-fonts); 
-  font-weight: var(--weight-text); 
-  font-size: 14px; 
-  line-height: 21px; 
-  max-width: 198px; 
-  text-transform: uppercase; 
-  color: var(--text-button); 
+  font-family: var(--accent-fonts);
+  font-weight: var(--weight-text);
+  font-size: 14px;
+  line-height: 21px;
+  max-width: 198px;
+  text-transform: uppercase;
+  color: var(--accent-color);
 }
 
 .modal__text {
