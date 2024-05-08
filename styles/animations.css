@@ -15,7 +15,7 @@
 .theme-menu__button:disabled:before {
   animation-name: arrow;
   animation-direction: alternate;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   inset-inline-start: 5px;
@@ -26,12 +26,8 @@
     left: -4px;
   }
 
-  50% {
-    left: 4px;
-  }
-
   to {
-    left: -4px;
+    left: 0px;
   }
 }
 
@@ -52,7 +48,7 @@
 
 .like-icon:hover .main-body {
   fill: var(--accent-color);
-  transition: fill 0.5s linear 0.03s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .core {

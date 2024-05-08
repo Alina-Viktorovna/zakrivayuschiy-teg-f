@@ -73,6 +73,7 @@
 }
 
 .theme-menu__button {
+  cursor: pointer;
   padding-inline-start: 22px;
   text-transform: uppercase;
   position: relative;
@@ -239,13 +240,12 @@
   transition: border 0.3s ease;
 }
 
-.button:focus {
+.card__icon-button:focus {
   outline: none;
 }
 
-.button:focus-visible {
-  border: 2px solid var(--border);
-  box-shadow: 2px 2px 0 var(--border);
+.card__icon-button:focus-visible {
+  border: 1px solid var(--border);
 }
 
 .card__like-button {
@@ -255,10 +255,6 @@
   min-height: 38px;
   min-inline-size: 130px;
   max-inline-size: 130px;
-}
-
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px 0 var(--border);
 }
 
 .button__text {
@@ -322,15 +318,16 @@
 .footer {
   display: flex;
   justify-content: center;
-  margin-block-start: 40px;
-  margin-block-end: 40px;
+  align-content: center;
+  inline-size: 100%;
+  padding: 50px 0 100px 0;
 }
 
 .footer-button {
   display: flex;
   flex-direction: row;
-  min-inline-size: 335px;
-  min-height: 55px;
+  min-inline-size: 310px;
+  min-block-size: 84px;
   align-items: center;
   justify-content: center;
   gap: 9px;
@@ -340,7 +337,8 @@
 }
 
 .footer__floppy {
-  color: var(--accent-color);
+  color: var(--text-button);
+  mix-blend-mode: difference;
 }
 
 dialog::backdrop {
@@ -349,12 +347,12 @@ dialog::backdrop {
 }
 
 dialog[open] {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg-color);
-  gap: 30px;
-  min-width: 341px;
-  padding: 32px 42px;
+  display: flex; 
+  flex-direction: column; 
+  background-color: var(--bg-color); 
+  gap: 30px; 
+  min-width: 341px; 
+  padding: 32px 42px; 
   border: 2px solid var(--border);
 }
 
@@ -365,18 +363,17 @@ dialog[open] {
 }
 
 .modal__title {
-  font-family: var(--accent-fonts);
-  font-weight: var(--weight-text);
-  font-size: 14px;
-  line-height: 21px;
-  max-width: 198px;
-  text-transform: uppercase;
-  color: var(--accent-color);
+  font-family: var(--accent-fonts); 
+  font-weight: var(--weight-text); 
+  font-size: 14px; 
+  line-height: 21px; 
+  max-width: 198px; 
+  text-transform: uppercase; 
+  color: var(--text-button); 
 }
 
 .modal__text {
   text-transform: uppercase;
-  color: var(--text-button);
 }
 
 .modal_button {
@@ -384,7 +381,7 @@ dialog[open] {
 }
 
 .modal__icon {
-  color: var(--accent-color);
+  color: var(--text-button);
 }
 
 .dialog-button {
@@ -423,6 +420,21 @@ dialog[open] {
     min-inline-size: 310px;
     min-block-size: 84px;
 }
+
+  .dialog[open] {
+    min-inline-size: 357px;
+    padding: 32px 32px;
+}
+
+  .modal__descroption {
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+  .footer__floppy {
+    block-size: 21px;
+    inline-size: 21px;
+  }
 }
 
 
