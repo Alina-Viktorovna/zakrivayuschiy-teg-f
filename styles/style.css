@@ -417,11 +417,6 @@ dialog[open] {
     padding: 32px 32px;
 }
 
-  .modal__descroption {
-    justify-content: flex-start;
-    gap: 20px;
-}
-
   .footer__floppy {
     block-size: 28px;
     inline-size: 28px;
