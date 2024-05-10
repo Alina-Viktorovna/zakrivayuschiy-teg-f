@@ -335,9 +335,9 @@
 .footer__floppy {
   width: 21px;
   height: 21px;
-  z-index: 1;
   color: var(--text-button);
   mix-blend-mode: difference;
+  z-index: 1;
 }
 
 dialog::backdrop {
@@ -350,8 +350,8 @@ dialog[open] {
   flex-direction: column;
   background-color: var(--bg-color);
   gap: 30px;
-  min-width: 341px;
-  padding: 32px 42px;
+  max-width: 353px;
+  padding: 30px;
   border: 2px solid var(--border);
 }
 
@@ -375,7 +375,10 @@ dialog[open] {
 }
 
 .modal__icon {
-  color: var(--accent-color);
+  align-self: center;
+  width: 39px;
+  height: 39px;
+  color: var(--accent-color);  
 }
 
 .dialog-button {
@@ -410,11 +413,16 @@ dialog[open] {
 
   .footer-button {
     flex-direction: column;
-  }
+}
 
   .dialog[open] {
     min-inline-size: 357px;
     padding: 32px 32px;
+}
+
+  .modal__descroption {
+    justify-content: flex-start;
+    gap: 20px;
 }
 
   .footer__floppy {
@@ -422,7 +430,3 @@ dialog[open] {
     inline-size: 28px;
   }
 }
-
-
-
-
