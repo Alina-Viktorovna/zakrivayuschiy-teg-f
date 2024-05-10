@@ -245,7 +245,7 @@
 }
 
 .card__icon-button:focus-visible {
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
 }
 
 .card__like-button {
@@ -320,16 +320,12 @@
   justify-content: center;
   align-content: center;
   inline-size: 100%;
-  padding: 50px 0 100px 0;
+  margin-block-end: 100px;
 }
 
 .footer-button {
-  display: flex;
-  flex-direction: row;
-  min-inline-size: 310px;
-  min-block-size: 84px;
+  padding: 15px 20px;
   align-items: center;
-  justify-content: center;
   gap: 9px;
   margin: 0 auto;
   transition: box-shadow 0.3s ease;
@@ -337,6 +333,9 @@
 }
 
 .footer__floppy {
+  width: 21px;
+  height: 21px;
+  z-index: 1;
   color: var(--text-button);
   mix-blend-mode: difference;
 }
@@ -357,9 +356,9 @@ dialog[open] {
 }
 
 .modal__descroption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
 }
 
 .modal__title {
@@ -367,7 +366,6 @@ dialog[open] {
   font-weight: var(--weight-text);
   font-size: 14px;
   line-height: 21px;
-  max-width: 198px;
   text-transform: uppercase;
   color: var(--accent-color);
 }
@@ -376,17 +374,12 @@ dialog[open] {
   text-transform: uppercase;
 }
 
-.modal_button {
-  max-height: 38px;
-}
-
 .modal__icon {
   color: var(--accent-color);
 }
 
 .dialog-button {
-  padding-block-start: 9px;
-  padding-block-end: 9px;
+  padding: 12px 17px;
 }
 
 @media (width <= 375px) {
@@ -417,9 +410,7 @@ dialog[open] {
 
   .footer-button {
     flex-direction: column;
-    min-inline-size: 310px;
-    min-block-size: 84px;
-}
+  }
 
   .dialog[open] {
     min-inline-size: 357px;
@@ -432,8 +423,8 @@ dialog[open] {
 }
 
   .footer__floppy {
-    block-size: 21px;
-    inline-size: 21px;
+    block-size: 28px;
+    inline-size: 28px;
   }
 }
 
